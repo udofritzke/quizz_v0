@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 
 /*
-Comentário segund commit
+Comentário segund commit - editado no git e clonado no AS
  */
 public class MainActivity extends AppCompatActivity {
     private TextView mTextViewAfirmacao;
