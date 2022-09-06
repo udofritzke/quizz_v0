@@ -26,11 +26,12 @@ public class QuestaoDB {
         valores.put("correta", q.isCorreta());
         return valores;
     }
+
     public void addQuestao(Questao q){
         ContentValues valores = getValoresConteudo(q);
         mDatabase.insert("Questoes", null, valores);
     }
-
+/*
     public void updateQuestao(Questao q){
         String uuidString = q.getId().toString();
         ContentValues valores = getValoresConteudo(q);
@@ -55,4 +56,5 @@ public class QuestaoDB {
                 "Questoes",
                 null, null);
     }
+     */
 }

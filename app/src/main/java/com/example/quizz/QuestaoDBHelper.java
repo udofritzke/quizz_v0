@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class QuestaoDBHelper extends SQLiteOpenHelper {
+
     private static final int VERSAO = 1;
     private static final String NOME_DATABASE = "questoesDB";
 
