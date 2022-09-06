@@ -9,7 +9,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /*
-Comentário primeiro commit
+GitHub:
+https://github.com/udofritzke/quizz_v0
+
+Comentário segundo commit
  */
 public class MainActivity extends AppCompatActivity {
     private TextView mTextViewAfirmacao;
