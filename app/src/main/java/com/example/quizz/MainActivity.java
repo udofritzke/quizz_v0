@@ -14,6 +14,7 @@ https://github.com/udofritzke/quizz_v0
 
 Comentário segundo commit
  */
+
 public class MainActivity extends AppCompatActivity {
     private TextView mTextViewAfirmacao;
     private Button mBotaoVerdadeiro;
