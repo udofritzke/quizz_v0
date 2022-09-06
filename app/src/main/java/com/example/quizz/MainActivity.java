@@ -8,9 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 /*
-Comentário segund commit
+Comentário segundo commit
  */
 public class MainActivity extends AppCompatActivity {
     private TextView mTextViewAfirmacao;
