@@ -2,11 +2,16 @@ package com.example.quizz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /*
 GitHub:
@@ -20,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mBotaoVerdadeiro;
     private Button mBotaoFalso;
     private Button mBotaoProximo;
+    boolean haQuestoes;
 
     QuestaoDB mQuestoesDb;
 
@@ -39,10 +45,12 @@ public class MainActivity extends AppCompatActivity {
         /* Atualiza visão de texto */
         atualizaTextoAfirmacao();
 
-    // insere questões no SQLite
+        // recupera referência para o banco de dados
         if (mQuestoesDb == null) {
             mQuestoesDb = new QuestaoDB(getBaseContext());
         }
+        mQuestoesDb.esvaziaTabela();
+        mQuestoesDb = new QuestaoDB(getBaseContext());
 
         int indice = 0;
         mQuestoesDb.addQuestao(mBancoDeQuestoes[indice++]);
@@ -76,6 +84,19 @@ public class MainActivity extends AppCompatActivity {
                 atualizaTextoAfirmacao();
             }
         });
+
+        Cursor cursor = mQuestoesDb.queryQuestao(null, null);
+        if (cursor.getCount() > 0) {
+            haQuestoes = true;
+            cursor.moveToFirst();
+            while (cursor.isAfterLast() == false) {
+                String afirmacao = cursor.getString(3);
+                int ehcorreta = cursor.getInt(2);
+               // mListaQuestoes.addQuestao(new Questao(afirmacao, ehcorreta == 0 ? false : true));
+                cursor.moveToNext();
+                Log.d("main", afirmacao + " " + ehcorreta);
+            }
+        } else haQuestoes = false;
     }
 
     void mostraToastAcertou() {

@@ -38,8 +38,9 @@ public class QuestaoDB {
         // mDatabase.update(QuestoesDbSchema.QuestoesTbl.NOME, valores, QuestoesDbSchema.QuestoesTbl.Cols.UUID +" = ?",
         //        new String[] {uuidString});
     }
-
+*/
     public Cursor queryQuestao(String clausulaWhere, String[] argsWhere){
+        /*
         Cursor cursor = mDatabase.query("Questoes",
                 null,  // todas as colunas
                 clausulaWhere,
@@ -48,13 +49,17 @@ public class QuestaoDB {
                 null, // sem having
                 null  // sem order by
         );
+
+         */
+
+        Cursor cursor = mDatabase.rawQuery("SELECT * FROM Questoes", null);
+
         return cursor;
     }
-    void removeBanco(){
+    void esvaziaTabela(){
         int delete;
         delete = mDatabase.delete(
                 "Questoes",
                 null, null);
     }
-     */
 }
