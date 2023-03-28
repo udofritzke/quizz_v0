@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         /* Atualiza visão de texto */
         atualizaTextoAfirmacao();
 
@@ -85,6 +84,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
+          Imprime as questões cadastradas no BD
+         */
         Cursor cursor = mQuestoesDb.queryQuestao(null, null);
         if (cursor.getCount() > 0) {
             haQuestoes = true;
@@ -92,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
             while (cursor.isAfterLast() == false) {
                 String afirmacao = cursor.getString(3);
                 int ehcorreta = cursor.getInt(2);
-               // mListaQuestoes.addQuestao(new Questao(afirmacao, ehcorreta == 0 ? false : true));
                 cursor.moveToNext();
                 Log.d("main", afirmacao + " " + ehcorreta);
             }
