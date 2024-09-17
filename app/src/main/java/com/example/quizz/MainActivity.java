@@ -20,7 +20,8 @@ https://github.com/udofritzke/quizz_v0
 Comentário segundo commit
  */
 
-public class MainActivity extends AppCompatActivity {
+public class
+MainActivity extends AppCompatActivity {
     private TextView mTextViewAfirmacao;
     private Button mBotaoVerdadeiro;
     private Button mBotaoFalso;
@@ -75,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 verificaResposta(false);
             }
         });
+
         mBotaoProximo = (Button) findViewById(R.id.botao_proximo);
         mBotaoProximo.setOnClickListener(new View.OnClickListener() {
             @Override

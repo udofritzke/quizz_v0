@@ -11,7 +11,7 @@ public class QuestaoDB {
     private SQLiteDatabase mDatabase;
 
     public QuestaoDB(Context contexto){
-        mContext = contexto.getApplicationContext();
+        mContext = contexto;
         mStaticContext = mContext;
         mDatabase = new QuestaoDBHelper(mContext).getWritableDatabase();
     }
